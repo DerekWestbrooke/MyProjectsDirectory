@@ -11,8 +11,10 @@ class Calculator(QtWidgets.QWidget):
 
         self.setWindowTitle('Calculator')
         self.setWindowIcon(QIcon(os.getcwd() + '/icons/calc.ico'))
+        self.setMinimumSize(self.size())
 
         self.le_result = QtWidgets.QLineEdit()
+
         self.le_input = QtWidgets.QLineEdit()
 
         self.grlo_buttons = QtWidgets.QGridLayout()
