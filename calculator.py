@@ -23,6 +23,7 @@ class Calculator(QtWidgets.QWidget):
                 if buttons[i][j] is not None:
                     button = QtWidgets.QPushButton(buttons[i][j])
                     button.setSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.MinimumExpanding)
+                    button.clicked.connect(self.click_the_button)
                     if buttons[i][j] != '=':
                         self.grlo_buttons.addWidget(button, i, j, 1, 1)
                     else:
@@ -34,3 +35,7 @@ class Calculator(QtWidgets.QWidget):
         self.vlo_main.addLayout(self.grlo_buttons)
 
         self.setLayout(self.vlo_main)
+
+    def click_the_button(self):
+        button = self.sender()
+        button_text = button.text()
