@@ -4,3 +4,4 @@ class Calculator(QtWidgets.QMainWindow):
     def __init__(self):
         super().__init__()
 
+        
