@@ -1,10 +1,16 @@
+import os
+
 from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5.QtGui import QIcon
 from static_values import buttons
 
 
 class Calculator(QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
+
+        self.setWindowTitle('Calculator')
+        self.setWindowIcon(QIcon(os.getcwd() + '/icons/calc.ico'))
 
         self.le_result = QtWidgets.QLineEdit()
         self.le_input = QtWidgets.QLineEdit()
