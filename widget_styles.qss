@@ -1,0 +1,70 @@
+/* Styles for QLineEdit */
+QLineEdit {
+    background-color: #666666;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid #555555;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 20px;
+}
+
+/* Styles for QWidget */
+QWidget {
+    background-color: #2e2e2e;
+}
+
+/* Styles for QPushButton with digits (common) */
+QPushButton#btn_digit {
+    background-color: #666666;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Styles for QPushButton with operators (common) */
+QPushButton#btn_operator {
+    background-color: #444444;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Styles for QPushButton with digits and operators (hover) */
+QPushButton#btn_digit:hover,
+QPushButton#btn_operator:hover {
+    background-color: #888888;
+}
+
+/* Styles for QPushButton with equal (hover) */
+QPushButton#btn_equal:hover {
+    background-color: #ffb711;
+}
+
+/* Styles for QPushButton with equal (common) */
+QPushButton#btn_equal {
+    background-color: #ff7d00;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Styles for QPushButton with digits and operators, when they are pressed  */
+QPushButton#btn_digit:pressed,
+QPushButton#btn_operator:pressed {
+    background-color: #000000;
+}
+
+/* Styles for QPushButton with equal, when it is pressed  */
+QPushButton#btn_equal:pressed {
+    background-color: #fe0000;
+}
