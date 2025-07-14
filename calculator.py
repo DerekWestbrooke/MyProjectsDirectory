@@ -2,7 +2,7 @@ import os
 import re
 
 
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtGui import QIcon
 from static_values import buttons
 from asteval import Interpreter
@@ -48,9 +48,12 @@ class Calculator(QtWidgets.QWidget):
 
         self.setLayout(self.vlo_main)
 
-    def click_the_button(self):
-        button = self.sender()
-        button_text = button.text()
+    def click_the_button(self, text=None):
+        if text is not None:
+            button_text = text
+        else:
+            button = self.sender()
+            button_text = button.text()
         funcs_dict = {
             '0123456789(': lambda: self.call_digits_func(button_text),
             'C': self.call_clear_func,
@@ -114,6 +117,17 @@ class Calculator(QtWidgets.QWidget):
                 self.le_result.setText(self.le_input.text() + '=' + str(result))
                 self.le_input.setText(str(result))
 
+    def keyPressEvent(self, event):
+        key_text = event.text()
+        key = event.key()
 
+        if key_text in '0123456789+-*/.()':
+            self.click_the_button(key_text)
+        elif key_text == '=' or key == QtCore.Qt.Key.Key_Space:
+            self.click_the_button('=')
+        elif key == QtCore.Qt.Key.Key_Delete:
+            self.click_the_button_by_text('C')
+        else:
+            super().keyPressEvent(event)
 
 
